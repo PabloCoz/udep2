@@ -1,6 +1,6 @@
 <?php
 
-namespace App\Http\Livewire\Exam;
+namespace App\Http\Livewire\Psychologist\Exam;
 
 use App\Models\Exam;
 use App\Models\Question;
@@ -18,7 +18,7 @@ class QuestionCreate extends Component
 
     public function render()
     {
-        return view('livewire.exam.question-create');
+        return view('livewire.psychologist.exam.question-create');
     }
 
     public function addOption()

@@ -1,6 +1,6 @@
 <?php
 
-namespace App\Http\Livewire\Exam;
+namespace App\Http\Livewire\Psychologist\Exam;
 
 use App\Models\Exam;
 use App\Models\Question;
@@ -23,7 +23,7 @@ class ExamQuestions extends Component
     
     public function render()
     {
-        return view('livewire.exam.exam-questions');
+        return view('livewire.psychologist.exam.exam-questions');
     }
 
     public function destroy(Question $question)

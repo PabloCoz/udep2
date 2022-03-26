@@ -6,7 +6,7 @@
         </div>
 
         <div class="mt-8">
-            @livewire('exam.question-create', ['exam' => $exam])
+            @livewire('psychologist.exam.question-create', ['exam' => $exam])
         </div>
         <div class="mt-4">
             @foreach ($questions as $index => $question)
@@ -28,7 +28,7 @@
                                 </div>
                             </div>
                             <div class="flex items-center mr-2 space-x-3">
-                                @livewire('exam.question-edit', ['question' => $question], key($question->id))
+                                @livewire('psychologist.exam.question-edit', ['question' => $question], key($question->id))
                                 <i class="fa-solid fa-trash-can cursor-pointer hover:text-red-600 focus:outline-none" wire:click="destroy({{$question}})"></i>
                             </div>
                         </article>

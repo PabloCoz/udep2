@@ -1,6 +1,6 @@
 <?php
 
-namespace App\Http\Livewire\Exam;
+namespace App\Http\Livewire\Psychologist\Exam;
 
 use App\Models\Exam;
 use App\Models\User;
@@ -15,7 +15,7 @@ class Users extends Component
     public function render()
     {
         $allUser = User::all();
-        return view('livewire.exam.users', compact('allUser'));
+        return view('livewire.psychologist.exam.users', compact('allUser'));
     }
 
     public function save()

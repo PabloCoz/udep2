@@ -1,7 +1,8 @@
 <?php
 
-use App\Http\Controllers\ExamController;
-use App\Http\Livewire\Exam\ExamQuestions;
+use App\Http\Controllers\Psychologist\ExamController;
+use App\Http\Livewire\Psychologist\Exam\ExamQuestions;
+use App\Http\Livewire\Psychologist\UserIndex;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -28,3 +29,5 @@ Route::resource('exams', ExamController::class)->middleware('auth')->names('exam
 Route::get('{exam}/pdf', [ExamController::class, 'pdf'])->middleware('auth')->name('pdf');
 
 Route::get('{exam}/questions', ExamQuestions::class)->middleware('auth')->name('questions');
+
+Route::get('users', UserIndex::class)->name('users');

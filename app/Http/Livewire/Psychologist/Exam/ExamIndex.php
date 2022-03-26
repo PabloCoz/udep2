@@ -1,6 +1,6 @@
 <?php
 
-namespace App\Http\Livewire\Exam;
+namespace App\Http\Livewire\Psychologist\Exam;
 
 use App\Models\Exam;
 use Livewire\Component;
@@ -13,6 +13,6 @@ class ExamIndex extends Component
     public function render()
     {
         $exams = Exam::orderBy('id', 'desc')->paginate(6);
-        return view('livewire.exam.exam-index', compact('exams'));
+        return view('livewire.psychologist.exam.exam-index', compact('exams'));
     }
 }

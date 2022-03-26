@@ -1,9 +1,11 @@
 <?php
 
-namespace App\Http\Controllers;
+
+namespace App\Http\Controllers\Psychologist;
 
 use App\Models\Exam;
 use Illuminate\Http\Request;
+use App\Http\Controllers\Controller;
 use Barryvdh\DomPDF\Facade as PDF;
 
 
@@ -16,7 +18,7 @@ class ExamController extends Controller
      */
     public function index()
     {
-        return view('exams.index');
+        return view('psychologist.exams.index');
     }
 
     /**
@@ -26,7 +28,7 @@ class ExamController extends Controller
      */
     public function create()
     {
-        return view('exams.create');
+        return view('psychologist.exams.create');
     }
 
     /**
@@ -46,7 +48,7 @@ class ExamController extends Controller
 
         $exam = Exam::create($request->all());
 
-        return redirect()->route('exams.index', $exam);
+        return redirect()->route('psychologist.exams.index', $exam);
     }
 
     /**
@@ -57,7 +59,7 @@ class ExamController extends Controller
      */
     public function show(Exam $exam)
     {
-        return view('exams.show', compact('exam'));
+        return view('psychologist.exams.show', compact('exam'));
     }
 
     /**
@@ -68,7 +70,7 @@ class ExamController extends Controller
      */
     public function edit(Exam $exam)
     {
-        return view('exams.edit', compact('exam'));
+        return view('psychologist.exams.edit', compact('exam'));
     }
 
     /**
@@ -89,7 +91,7 @@ class ExamController extends Controller
 
         $exam->update($request->all());
 
-        return redirect()->route('exams.edit', $exam);
+        return redirect()->route('psychologist.exams.edit', $exam);
     }
 
     /**
@@ -101,15 +103,11 @@ class ExamController extends Controller
     public function destroy(Exam $exam)
     {
         $exam->delete();
-        return redirect()->route('exams.index');
+        return redirect()->route('psychologist.exams.index');
     }
 
     public function pdf(Exam $exam)
     {
-        /* $exam = [
-            'titulo' => 'Styde.net'
-        ]; */
-
         $pdf = PDF::loadView('exams.exampdf', ['exam' => $exam]);
         return $pdf->stream('invoice.pdf');
     }

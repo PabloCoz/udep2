@@ -16,7 +16,13 @@
         <h1 class="font-bold">{{ $exam->name }}</h1>
     </div>
 
-    <div class="mt-16">
+    <div class="my-6">
+        <h1 class="text-lg text-justify">
+            {{$exam->description}}
+        </h1>
+    </div>
+
+    <div class="mt-10">
         @foreach ($exam->questions as $question)
             <li>
                 {{$question->name}}

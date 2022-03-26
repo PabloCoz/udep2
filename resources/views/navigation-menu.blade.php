@@ -27,18 +27,24 @@
             <span class="text-2xl font-extrabold">Logo</span>
         </a>
 
-        <nav class="pt-10">
+        <nav class="pt-10 space-y-3">
             <a href="#" class="block py-2.5 px-4 rounded transition duration-200 hover:bg-white hover:font-bold hover:text-black">
                 Home
             </a>
-            <a href="{{route('exams.index')}}" class="block py-2.5 px-4 rounded transition duration-200 hover:bg-white hover:font-bold hover:text-black">
+            <a href="{{route('exams.index')}}"  class="block py-2.5 px-4 rounded transition duration-200 @routeIs ('exams.index') bg-white text-black font-bold @endif hover:bg-white hover:font-bold hover:text-black ">
                 Examenes
             </a>
             <a href="" class="block py-2.5 px-4 rounded transition duration-200 hover:bg-white hover:font-bold hover:text-black">
-                Examenes para resolver
+                Baterias
+            </a>
+            <a href="{{route('users')}}" class="block py-2.5 px-4 rounded transition duration-200 @routeIs ('users') bg-white text-black font-bold @endif hover:bg-white hover:font-bold hover:text-black">
+                Alumnos
             </a>
             <a href="" class="block py-2.5 px-4 rounded transition duration-200 hover:bg-white hover:font-bold hover:text-black">
-                Pricing
+                Mensajes
+            </a>
+            <a href="{{route('profile.show')}}" class="block py-2.5 px-4 rounded transition duration-200 hover:bg-white hover:font-bold hover:text-black">
+                Configuraciones
             </a>
         </nav>
     </div>

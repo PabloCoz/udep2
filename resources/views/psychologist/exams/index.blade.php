@@ -8,6 +8,6 @@
                 <a href="{{route('exams.create')}}" class="mx-2 rounded p-2 block text-center bg-yellow-400 font-bold shadow-lg shadow-amber-600/75">Nuevo Examen</a>
             </div>
         </div>
-        @livewire('exam.exam-index')
+        @livewire('psychologist.exam.exam-index')
     </div>
 </x-app-layout>
