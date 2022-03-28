@@ -18,34 +18,46 @@
         class=" bg-gray-800 text-gray-100 w-64 space-y-6 py-7 px-2 absolute inset-y-0 left-0 transform -translate-x-full md:relative md:translate-x-0 transition duration-200 ease-in-out">
 
 
-        <a href="#" class="text-white flex items-center space-x-2 px-4">
-            <svg class="w-8 h-8" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
-                stroke="currentColor">
-                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-                    d="M9 12l2 2 4-4M7.835 4.697a3.42 3.42 0 001.946-.806 3.42 3.42 0 014.438 0 3.42 3.42 0 001.946.806 3.42 3.42 0 013.138 3.138 3.42 3.42 0 00.806 1.946 3.42 3.42 0 010 4.438 3.42 3.42 0 00-.806 1.946 3.42 3.42 0 01-3.138 3.138 3.42 3.42 0 00-1.946.806 3.42 3.42 0 01-4.438 0 3.42 3.42 0 00-1.946-.806 3.42 3.42 0 01-3.138-3.138 3.42 3.42 0 00-.806-1.946 3.42 3.42 0 010-4.438 3.42 3.42 0 00.806-1.946 3.42 3.42 0 013.138-3.138z" />
-            </svg>
-            <span class="text-2xl font-extrabold">Logo</span>
+        <a href="#">
+            <img class="object-contain" src="{{asset('img/logo2.png')}}" alt="">
         </a>
 
         <nav class="pt-10 space-y-3">
-            <a href="#" class="block py-2.5 px-4 rounded transition duration-200 hover:bg-white hover:font-bold hover:text-black">
+            <a href="#"
+                class="block py-2.5 px-4 rounded transition duration-200 hover:bg-white hover:font-bold hover:text-black">
                 Home
             </a>
-            <a href="{{route('exams.index')}}"  class="block py-2.5 px-4 rounded transition duration-200 @routeIs ('exams.index') bg-white text-black font-bold @endif hover:bg-white hover:font-bold hover:text-black ">
+            <a href="{{ route('exams.index') }}"
+                class="block py-2.5 px-4 rounded transition duration-200 @routeIs ('exams.index') bg-white text-black font-bold @endif hover:bg-white hover:font-bold hover:text-black ">
                 Examenes
             </a>
-            <a href="" class="block py-2.5 px-4 rounded transition duration-200 hover:bg-white hover:font-bold hover:text-black">
+            <a href=""
+                class="block py-2.5 px-4 rounded transition duration-200 hover:bg-white hover:font-bold hover:text-black">
                 Baterias
             </a>
-            <a href="{{route('users')}}" class="block py-2.5 px-4 rounded transition duration-200 @routeIs ('users') bg-white text-black font-bold @endif hover:bg-white hover:font-bold hover:text-black">
+            <a href="{{ route('users') }}"
+                class="block py-2.5 px-4 rounded transition duration-200 @routeIs ('users') bg-white text-black font-bold @endif hover:bg-white hover:font-bold hover:text-black">
                 Alumnos
             </a>
-            <a href="" class="block py-2.5 px-4 rounded transition duration-200 hover:bg-white hover:font-bold hover:text-black">
-                Mensajes
+            <a href="{{ route('messages') }}"
+                class="flex items-center py-2.5 px-4 rounded transition duration-200 hover:bg-white hover:font-bold hover:text-black justify-between">
+                <span class="">Mensajes</span>
+                <span
+                    class="inline-flex justify-center items-center p-3 ml-3 w-3 h-3 text-sm font-bold text-white bg-red-500 rounded-full">3</span>
             </a>
-            <a href="{{route('profile.show')}}" class="block py-2.5 px-4 rounded transition duration-200 hover:bg-white hover:font-bold hover:text-black">
+            <a href="{{ route('profile.show') }}"
+                class="block py-2.5 px-4 rounded transition duration-200 hover:bg-white hover:font-bold hover:text-black">
                 Configuraciones
             </a>
+            <form method="POST" action="{{ route('logout') }}"
+                class="block py-2.5 px-4 rounded transition duration-200 hover:bg-white hover:font-bold hover:text-black"
+                action="">
+                @csrf
+                <a href="{{ route('logout') }}" onclick="event.preventDefault();
+                 this.closest('form').submit();">
+                    {{ __('Log Out') }}
+                </a>
+            </form>
         </nav>
     </div>
 </div>

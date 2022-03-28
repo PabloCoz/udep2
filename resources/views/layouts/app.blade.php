@@ -17,7 +17,7 @@
     @livewireStyles
 
     <!-- Scripts -->
-    <script src="{{ mix('js/app.js') }}" defer></script>
+
     <script src="https://kit.fontawesome.com/2537d8fed3.js" crossorigin="anonymous"></script>
 </head>
 
@@ -34,6 +34,7 @@
     </div>
 
     @livewireScripts
+    <script src="{{ mix('js/app.js') }}"></script>
     @stack('modals')
     @isset($js)
         {{ $js }}

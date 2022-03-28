@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\Psychologist\ExamController;
+use App\Http\Livewire\Notification;
 use App\Http\Livewire\Psychologist\Exam\ExamQuestions;
 use App\Http\Livewire\Psychologist\UserIndex;
 use Illuminate\Support\Facades\Route;
@@ -20,14 +21,12 @@ Route::get('/', function () {
     return view('auth.login');
 });
 
-Route::middleware(['auth:sanctum', 'verified'])->get('/dashboard', function () {
-    return view('dashboard');
-})->name('dashboard');
-  
 Route::resource('exams', ExamController::class)->middleware('auth')->names('exams');
 
 Route::get('{exam}/pdf', [ExamController::class, 'pdf'])->middleware('auth')->name('pdf');
 
 Route::get('{exam}/questions', ExamQuestions::class)->middleware('auth')->name('questions');
 
-Route::get('users', UserIndex::class)->name('users');
+Route::get('users', UserIndex::class)->middleware('auth')->name('users');
+
+Route::get('messages', Notification::class)->middleware('auth')->name('messages');

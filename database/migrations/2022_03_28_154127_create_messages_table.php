@@ -13,14 +13,14 @@ return new class extends Migration
      */
     public function up()
     {
-        Schema::create('users', function (Blueprint $table) {
+        Schema::create('messages', function (Blueprint $table) {
             $table->id();
-            $table->string('name');
-            $table->char('DNI', 8)->unique();
-            $table->string('password');
-            $table->integer('notification')->default(0);
-            $table->rememberToken();
-            $table->string('profile_photo_path', 2048)->nullable();
+            $table->unsignedBigInteger('from_user_id');
+            $table->unsignedBigInteger('to_user_id');
+            $table->foreign('from_user_id')->references('id')->on('users');
+            $table->foreign('to_user_id')->references('id')->on('users');
+            $table->string('subject');
+            $table->text('body');
             $table->timestamps();
         });
     }
@@ -32,6 +32,6 @@ return new class extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('users');
+        Schema::dropIfExists('messages');
     }
 };
