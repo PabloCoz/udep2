@@ -19,25 +19,25 @@
 
 
         <a href="#">
-            <img class="object-contain" src="{{asset('img/logo2.png')}}" alt="">
+            <img class="object-contain" src="{{ asset('img/logo2.png') }}" alt="">
         </a>
 
         <nav class="pt-10 space-y-3">
-            <a href="#"
-                class="block py-2.5 px-4 rounded transition duration-200 hover:bg-white hover:font-bold hover:text-black">
-                Home
-            </a>
             <a href="{{ route('exams.index') }}"
                 class="block py-2.5 px-4 rounded transition duration-200 @routeIs ('exams.index') bg-white text-black font-bold @endif hover:bg-white hover:font-bold hover:text-black ">
                 Examenes
             </a>
-            <a href=""
-                class="block py-2.5 px-4 rounded transition duration-200 hover:bg-white hover:font-bold hover:text-black">
+            <a href="{{ route('battery') }}"
+                class="block py-2.5 px-4 rounded transition duration-200 @routeIs ('battery') bg-white text-black font-bold @endif hover:bg-white hover:font-bold hover:text-black">
                 Baterias
             </a>
             <a href="{{ route('users') }}"
                 class="block py-2.5 px-4 rounded transition duration-200 @routeIs ('users') bg-white text-black font-bold @endif hover:bg-white hover:font-bold hover:text-black">
                 Alumnos
+            </a>
+            <a href="{{ route('users') }}"
+                class="block py-2.5 px-4 rounded transition duration-200 @routeIs ('users') bg-white text-black font-bold @endif hover:bg-white hover:font-bold hover:text-black">
+                Resultados
             </a>
             <a href="{{ route('messages') }}"
                 class="flex items-center py-2.5 px-4 rounded transition duration-200 hover:bg-white hover:font-bold hover:text-black justify-between">
@@ -49,13 +49,12 @@
                 class="block py-2.5 px-4 rounded transition duration-200 hover:bg-white hover:font-bold hover:text-black">
                 Configuraciones
             </a>
-            <form method="POST" action="{{ route('logout') }}"
-                class="block py-2.5 px-4 rounded transition duration-200 hover:bg-white hover:font-bold hover:text-black"
-                action="">
+            <form method="POST" action="{{ route('logout') }}">
                 @csrf
-                <a href="{{ route('logout') }}" onclick="event.preventDefault();
+                <a class="block py-2.5 px-4 rounded transition duration-200 hover:bg-white hover:font-bold hover:text-black"
+                    href="{{ route('logout') }}" onclick="event.preventDefault();
                  this.closest('form').submit();">
-                    {{ __('Log Out') }}
+                    Cerrar Sesión
                 </a>
             </form>
         </nav>
