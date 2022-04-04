@@ -6,7 +6,7 @@
                     {!! Form::model($exam, ['route' => ['exams.update', $exam], 'method' => 'put']) !!}
 
                     
-                    @include('exams.partials.form')
+                    @include('psychologist.exams.partials.form')
 
                     <div class="flex justify-end mt-4">
                         {!! Form::submit('Actualizar información', ['class' => 'bg-blue-500 block text-white font-bold rounded px-3 py-2 cursor-pointer shadow-lg shadow-blue-500/70']) !!}

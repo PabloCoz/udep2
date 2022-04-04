@@ -7,7 +7,11 @@
         <div class="mt-4">
             <div class="overflow-hidden bg-white shadow-lg shadow-slate-800/50 rounded">
                 <div class="px-6 py-4">
-                    
+                    <div class="">
+                        <table>
+                            {{$responses}}
+                        </table>
+                    </div>
                 </div>
             </div>
         </div>

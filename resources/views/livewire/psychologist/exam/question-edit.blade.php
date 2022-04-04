@@ -4,7 +4,7 @@
 
     <x-jet-dialog-modal wire:model="update">
         <x-slot name="title">
-            <h1 class="font-bold">Nueva Pregunta</h1>
+            <h1 class="font-bold">Actualizar Pregunta</h1>
         </x-slot>
         <x-slot name="content">
             <div class="mb-3">

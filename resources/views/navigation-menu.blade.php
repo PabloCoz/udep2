@@ -45,6 +45,12 @@
                 Roles y Permisos
             </a> 
             @endcan
+            @can("Listar Usuarios")
+            <a href="{{ route('admin.users.index') }}"
+                class="block py-2.5 px-4 rounded transition duration-200 @routeIs ('admin.users.index') bg-white text-black font-bold @endif hover:bg-white hover:font-bold hover:text-black">
+                Usuarios
+            </a>
+            @endcan 
             <a href="{{ route('students.exam') }}"
                 class="block py-2.5 px-4 rounded transition duration-200 @routeIs ('students.exam') bg-white text-black font-bold @endif hover:bg-white hover:font-bold hover:text-black ">
                 Examenes

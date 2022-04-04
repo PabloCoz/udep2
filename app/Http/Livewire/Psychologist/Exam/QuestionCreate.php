@@ -50,6 +50,5 @@ class QuestionCreate extends Component
         }
         
         $this->reset('name', 'options', 'create');
-        $this->exam = Exam::find($this->exam->id);
     }
 }

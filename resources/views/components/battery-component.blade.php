@@ -15,9 +15,9 @@
                     <div class="flex items-center">
                         <div class="ml-4">
                             <div class="text-sm font-medium text-gray-900">
-                                <a class="hover:underline hover:text-blue-500" href="{{ route('questions', $exam) }}">
-                                    {{ Str::limit($exam->name, 30) }}
-                                </a>
+                                <h1>
+                                    {{ $exam->name }}
+                                </h1>
                             </div>
                             <div class="text-sm text-gray-500">
                                 {{ Str::limit($exam->description, 30) }}</div>
