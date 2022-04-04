@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\Psychologist\ExamController;
+use App\Http\Controllers\Psychologist\ResponseController;
 use App\Http\Livewire\Notification;
 use App\Http\Livewire\Psychologist\Battery;
 use App\Http\Livewire\Psychologist\Exam\ExamQuestions;
@@ -27,6 +28,8 @@ Route::resource('exams', ExamController::class)->middleware('auth')->names('exam
 Route::get('{exam}/pdf', [ExamController::class, 'pdf'])->middleware('auth')->name('pdf');
 
 Route::get('{exam}/questions', ExamQuestions::class)->middleware('auth')->name('questions');
+
+Route::get('results', [ResponseController::class, 'index'])->middleware('auth')->name('responses.index');
 
 Route::get('users', UserIndex::class)->middleware('auth')->name('users');
 

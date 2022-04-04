@@ -108,7 +108,7 @@ class ExamController extends Controller
 
     public function pdf(Exam $exam)
     {
-        $pdf = PDF::loadView('exams.exampdf', ['exam' => $exam]);
+        $pdf = PDF::loadView('psychologist.exams.exampdf', ['exam' => $exam]);
         return $pdf->stream('invoice.pdf');
     }
 }

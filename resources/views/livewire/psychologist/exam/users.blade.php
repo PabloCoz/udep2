@@ -22,7 +22,7 @@
                                 <td>
                                     <input wire:model="students.{{ $index }}"
                                         class="focus:outline-none rounded appearance-none bg-white checked:bg-blue-700 text-blue-500 "
-                                        type="checkbox" value="{{$user->id}}" {{-- name="{{ $user->DNI }}" --}}>
+                                        type="checkbox" value="{{$user->id}}">
                                 </td>
                             </tr>
                         @endforeach

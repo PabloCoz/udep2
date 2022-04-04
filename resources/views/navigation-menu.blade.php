@@ -35,9 +35,19 @@
                 class="block py-2.5 px-4 rounded transition duration-200 @routeIs ('users') bg-white text-black font-bold @endif hover:bg-white hover:font-bold hover:text-black">
                 Alumnos
             </a>
-            <a href="{{ route('users') }}"
-                class="block py-2.5 px-4 rounded transition duration-200 @routeIs ('users') bg-white text-black font-bold @endif hover:bg-white hover:font-bold hover:text-black">
+            <a href="{{ route('responses.index') }}"
+                class="block py-2.5 px-4 rounded transition duration-200 @routeIs ('responses.index') bg-white text-black font-bold @endif hover:bg-white hover:font-bold hover:text-black">
                 Resultados
+            </a>
+            @can('Ver Dashboard')
+            <a href="{{ route('admin.roles.index') }}"
+                class="block py-2.5 px-4 rounded transition duration-200 @routeIs ('admin.roles.index') bg-white text-black font-bold @endif hover:bg-white hover:font-bold hover:text-black">
+                Roles y Permisos
+            </a> 
+            @endcan
+            <a href="{{ route('students.exam') }}"
+                class="block py-2.5 px-4 rounded transition duration-200 @routeIs ('students.exam') bg-white text-black font-bold @endif hover:bg-white hover:font-bold hover:text-black ">
+                Examenes
             </a>
             <a href="{{ route('messages') }}"
                 class="flex items-center py-2.5 px-4 rounded transition duration-200 hover:bg-white hover:font-bold hover:text-black justify-between">

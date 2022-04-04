@@ -44,7 +44,7 @@ class QuestionEdit extends Component
         foreach ($this->question->options as $option) {
             $this->question->options()->delete($option);
         }
-        $this->exam = Exam::find($this->exam->id);
+        /* $this->exam = Exam::find($this->exam->id); */
     }
 
     public function update()
@@ -59,6 +59,6 @@ class QuestionEdit extends Component
         }
         $this->question->save();
         $this->reset('update');
-        $this->exam = Exam::find($this->exam->id);
+        /* $this->exam = Exam::find($this->exam->id); */
     }
 }
