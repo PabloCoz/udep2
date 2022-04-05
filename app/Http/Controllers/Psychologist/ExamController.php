@@ -11,6 +11,14 @@ use Barryvdh\DomPDF\Facade as PDF;
 
 class ExamController extends Controller
 {
+
+    public function __construct()
+    {
+        $this->middleware('can:Listar Examen')->only('index', 'pdf');
+        $this->middleware('can:Crear Examen')->only('create', 'store');
+        $this->middleware('can:Editar Examen')->only('edit', 'update');
+        $this->middleware('can:Eliminar Examen')->only('destroy');
+    }
     /**
      * Display a listing of the resource.
      *

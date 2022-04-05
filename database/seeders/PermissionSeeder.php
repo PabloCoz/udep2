@@ -16,31 +16,51 @@ class PermissionSeeder extends Seeder
     public function run()
     {
         Permission::create([
-            'name' => 'Ver Dashboard',
+            'name' => 'Ver Dashboard', /* 1 */
         ]);
 
         Permission::create([
-            'name' => 'Crear Role',
+            'name' => 'Crear Role', /* 2 */
         ]);
 
         Permission::create([
-            'name' => 'Listar Role',
+            'name' => 'Listar Role', /* 3 */
         ]);
 
         Permission::create([
-            'name' => 'Editar Role',
+            'name' => 'Editar Role', /* 4 */
         ]);
 
         Permission::create([
-            'name' => 'Eliminar Role',
+            'name' => 'Eliminar Role', /* 5 */
         ]);
 
         Permission::create([
-            'name' => 'Listar Usuarios',
+            'name' => 'Listar Usuarios', /* 6 */
         ]);
 
         Permission::create([
-            'name' => 'Editar Usuarios',
+            'name' => 'Editar Usuarios', /* 7 */
+        ]);
+
+        Permission::create([
+            'name' => 'Listar Examen', /* 8 */
+        ]);
+
+        Permission::create([
+            'name' => 'Crear Examen' /* 9 */
+        ]);
+
+        Permission::create([
+            'name' => 'Editar Examen' /* 10 */
+        ]);
+
+        Permission::create([
+            'name' => 'Eliminar Examen' /* 11 */
+        ]);
+
+        Permission::create([
+            'name' => 'Ver Respuestas' /* 12 */
         ]);
     }
 }

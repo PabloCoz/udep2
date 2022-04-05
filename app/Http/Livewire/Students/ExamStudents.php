@@ -10,7 +10,7 @@ class ExamStudents extends Component
 {
     public function render()
     {
-        $users = User::find(2)->exams_response()->get();
+        $users = User::find(auth()->user()->id)->exams_response()->get();
         return view('livewire.students.exam-students', compact('users'));
     }
 }

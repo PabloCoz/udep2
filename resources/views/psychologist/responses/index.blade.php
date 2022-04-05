@@ -9,7 +9,10 @@
                 <div class="px-6 py-4">
                     <div class="">
                         <table>
-                            {{$responses}}
+                            {{-- @foreach ($exams->students as $item)
+                                {{$item}}
+                            @endforeach --}}
+                            {{$exams}}
                         </table>
                     </div>
                 </div>

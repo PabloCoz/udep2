@@ -23,16 +23,16 @@ Route::get('/', function () {
     return view('auth.login');
 });
 
-Route::resource('exams', ExamController::class)->middleware('auth')->names('exams');
+Route::resource('exams', ExamController::class)->middleware('auth', 'can:Listar Examen')->names('exams');
 
 Route::get('{exam}/pdf', [ExamController::class, 'pdf'])->middleware('auth')->name('pdf');
 
 Route::get('{exam}/questions', ExamQuestions::class)->middleware('auth')->name('questions');
 
-Route::get('results', [ResponseController::class, 'index'])->middleware('auth')->name('responses.index');
+Route::get('results', [ResponseController::class, 'index'])->middleware('auth', 'can:Ver Respuestas')->name('responses.index');
 
-Route::get('users', UserIndex::class)->middleware('auth')->name('users');
+Route::get('users', UserIndex::class)->middleware('auth', 'can:Listar Usuarios')->name('users');
 
 Route::get('messages', Notification::class)->middleware('auth')->name('messages');
 
-Route::get('battery', Battery::class)->middleware('auth')->name('battery');
+Route::get('battery', Battery::class)->middleware('auth', 'can:Listar Examen')->name('battery');

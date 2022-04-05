@@ -23,34 +23,40 @@
         </a>
 
         <nav class="pt-10 space-y-3">
-            <a href="{{ route('exams.index') }}"
-                class="block py-2.5 px-4 rounded transition duration-200 @routeIs ('exams.index') bg-white text-black font-bold @endif hover:bg-white hover:font-bold hover:text-black ">
-                Examenes
-            </a>
-            <a href="{{ route('battery') }}"
-                class="block py-2.5 px-4 rounded transition duration-200 @routeIs ('battery') bg-white text-black font-bold @endif hover:bg-white hover:font-bold hover:text-black">
-                Baterias
-            </a>
-            <a href="{{ route('users') }}"
-                class="block py-2.5 px-4 rounded transition duration-200 @routeIs ('users') bg-white text-black font-bold @endif hover:bg-white hover:font-bold hover:text-black">
-                Alumnos
-            </a>
-            <a href="{{ route('responses.index') }}"
-                class="block py-2.5 px-4 rounded transition duration-200 @routeIs ('responses.index') bg-white text-black font-bold @endif hover:bg-white hover:font-bold hover:text-black">
-                Resultados
-            </a>
-            @can('Ver Dashboard')
-            <a href="{{ route('admin.roles.index') }}"
-                class="block py-2.5 px-4 rounded transition duration-200 @routeIs ('admin.roles.index') bg-white text-black font-bold @endif hover:bg-white hover:font-bold hover:text-black">
-                Roles y Permisos
-            </a> 
+            @can('Listar Examen')
+                <a href="{{ route('exams.index') }}"
+                    class="block py-2.5 px-4 rounded transition duration-200 @routeIs ('exams.index') bg-white text-black font-bold @endif hover:bg-white hover:font-bold hover:text-black ">
+                    Examenes
+                </a>
+                <a href="{{ route('battery') }}"
+                    class="block py-2.5 px-4 rounded transition duration-200 @routeIs ('battery') bg-white text-black font-bold @endif hover:bg-white hover:font-bold hover:text-black">
+                    Baterias
+                </a>
             @endcan
-            @can("Listar Usuarios")
-            <a href="{{ route('admin.users.index') }}"
-                class="block py-2.5 px-4 rounded transition duration-200 @routeIs ('admin.users.index') bg-white text-black font-bold @endif hover:bg-white hover:font-bold hover:text-black">
-                Usuarios
-            </a>
-            @endcan 
+            @can('Listar Usuarios')
+                <a href="{{ route('users') }}"
+                    class="block py-2.5 px-4 rounded transition duration-200 @routeIs ('users') bg-white text-black font-bold @endif hover:bg-white hover:font-bold hover:text-black">
+                    Alumnos
+                </a>
+            @endcan
+            @can('Ver Respuestas')
+                <a href="{{ route('responses.index') }}"
+                    class="block py-2.5 px-4 rounded transition duration-200 @routeIs ('responses.index') bg-white text-black font-bold @endif hover:bg-white hover:font-bold hover:text-black">
+                    Resultados
+                </a>
+            @endcan
+            @can('Ver Dashboard')
+                <a href="{{ route('admin.roles.index') }}"
+                    class="block py-2.5 px-4 rounded transition duration-200 @routeIs ('admin.roles.index') bg-white text-black font-bold @endif hover:bg-white hover:font-bold hover:text-black">
+                    Roles y Permisos
+                </a>
+            @endcan
+            @can('Editar Usuarios')
+                <a href="{{ route('admin.users.index') }}"
+                    class="block py-2.5 px-4 rounded transition duration-200 @routeIs ('admin.users.index') bg-white text-black font-bold @endif hover:bg-white hover:font-bold hover:text-black">
+                    Usuarios
+                </a>
+            @endcan
             <a href="{{ route('students.exam') }}"
                 class="block py-2.5 px-4 rounded transition duration-200 @routeIs ('students.exam') bg-white text-black font-bold @endif hover:bg-white hover:font-bold hover:text-black ">
                 Examenes
