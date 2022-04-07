@@ -20,8 +20,8 @@ class Users extends Component
 
     public function save()
     {
-        $this->exam->students()->sync($this->students);
+        $this->exam->students()->attach($this->students);
         $this->reset('open', 'students');
-        return redirect()->route('exams.index');
+        return redirect()->route('battery');
     }
 }

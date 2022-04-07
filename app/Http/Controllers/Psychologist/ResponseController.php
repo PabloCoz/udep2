@@ -11,7 +11,12 @@ class ResponseController extends Controller
 {
     public function index()
     {
-        $exams = Exam::find(10)->students()->get();
+        $exams = Exam::orderBy('id', 'desc')->paginate(8);
         return view('psychologist.responses.index', compact('exams'));
+    }
+
+    public function show(Exam $exam)
+    {
+        return view('psychologist.responses.show', compact('exam'));
     }
 }

@@ -42,7 +42,7 @@
             @can('Ver Respuestas')
                 <a href="{{ route('responses.index') }}"
                     class="block py-2.5 px-4 rounded transition duration-200 @routeIs ('responses.index') bg-white text-black font-bold @endif hover:bg-white hover:font-bold hover:text-black">
-                    Resultados
+                    Evaluación
                 </a>
             @endcan
             @can('Ver Dashboard')

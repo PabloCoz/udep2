@@ -25,4 +25,9 @@ class Response extends Model
     {
         return $this->belongsTo(Option::class);
     }
+
+    public function user()
+    {
+        return $this->belongsTo(User::class);
+    }
 }

@@ -4,6 +4,7 @@ use App\Http\Controllers\Psychologist\ExamController;
 use App\Http\Controllers\Psychologist\ResponseController;
 use App\Http\Livewire\Notification;
 use App\Http\Livewire\Psychologist\Battery;
+use App\Http\Livewire\Psychologist\Evaluation;
 use App\Http\Livewire\Psychologist\Exam\ExamQuestions;
 use App\Http\Livewire\Psychologist\UserIndex;
 use Illuminate\Support\Facades\Route;
@@ -31,8 +32,12 @@ Route::get('{exam}/questions', ExamQuestions::class)->middleware('auth')->name('
 
 Route::get('results', [ResponseController::class, 'index'])->middleware('auth', 'can:Ver Respuestas')->name('responses.index');
 
+Route::get('results/{exam}/response', [ResponseController::class, 'show'])->middleware('auth', 'can:Ver Respuestas')->name('responses.show');
+
 Route::get('users', UserIndex::class)->middleware('auth', 'can:Listar Usuarios')->name('users');
 
 Route::get('messages', Notification::class)->middleware('auth')->name('messages');
 
 Route::get('battery', Battery::class)->middleware('auth', 'can:Listar Examen')->name('battery');
+
+Route::get('{user}/evaluation', Evaluation::class)->middleware('auth')->name('users.evaluation');

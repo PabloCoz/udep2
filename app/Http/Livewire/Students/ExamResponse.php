@@ -32,7 +32,6 @@ class ExamResponse extends Component
 
         for ($i = 0; $i < count($option); $i++) {
             Response::create([
-                'name' => 'prueba',
                 'question_id' => $question[$i],
                 'exam_id' => $this->exam->id,
                 'option_id' => $option[$i],
