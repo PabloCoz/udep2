@@ -17,7 +17,6 @@ class ExamController extends Controller
         $this->middleware('can:Listar Examen')->only('index', 'pdf');
         $this->middleware('can:Crear Examen')->only('create', 'store');
         $this->middleware('can:Editar Examen')->only('edit', 'update');
-        $this->middleware('can:Eliminar Examen')->only('destroy');
     }
     /**
      * Display a listing of the resource.
@@ -49,14 +48,13 @@ class ExamController extends Controller
     {
         $request->validate([
             'name' => 'required',
-            'description' => 'required',
             'slug' => 'required',
             'user_id' => 'required',
         ]);
 
-        $exam = Exam::create($request->all());
+        Exam::create($request->all());
 
-        return redirect()->route('psychologist.exams.index', $exam);
+        return redirect()->route('exams.index');
     }
 
     /**
@@ -92,14 +90,13 @@ class ExamController extends Controller
     {
         $request->validate([
             'name' => 'required',
-            'description' => 'required',
             'slug' => 'required',
             'user_id' => 'required',
         ]);
 
         $exam->update($request->all());
 
-        return redirect()->route('psychologist.exams.edit', $exam);
+        return redirect()->route('exams.index');
     }
 
     /**
@@ -108,11 +105,6 @@ class ExamController extends Controller
      * @param  \App\Models\Exam  $exam
      * @return \Illuminate\Http\Response
      */
-    public function destroy(Exam $exam)
-    {
-        $exam->delete();
-        return redirect()->route('psychologist.exams.index');
-    }
 
     public function pdf(Exam $exam)
     {

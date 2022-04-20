@@ -17,7 +17,15 @@
         </div>
     </div>
 
-    <x-slot name="js">
-        <script src="{{ asset('js/form.js') }}"></script>
-    </x-slot>
+
+    <script src="https://cdn.ckeditor.com/ckeditor5/34.0.0/classic/ckeditor.js"></script>
+    <script src="{{ asset('js/form.js') }}"></script>
+    <script>
+        ClassicEditor
+            .create(document.querySelector('#description'))
+            .catch(error => {
+                console.error(error);
+            });
+    </script>
+
 </x-app-layout>

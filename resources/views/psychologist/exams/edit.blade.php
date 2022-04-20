@@ -5,7 +5,7 @@
                 <div>
                     {!! Form::model($exam, ['route' => ['exams.update', $exam], 'method' => 'put']) !!}
 
-                    
+                    {!! Form::hidden('user_id', auth()->user()->id) !!}
                     @include('psychologist.exams.partials.form')
 
                     <div class="flex justify-end mt-4">
@@ -20,4 +20,12 @@
     <x-slot name="js">
         <script src="{{ asset('js/form.js') }}"></script>
     </x-slot>
+    <script src="https://cdn.ckeditor.com/ckeditor5/34.0.0/classic/ckeditor.js"></script>
+    <script>
+        ClassicEditor
+            .create(document.querySelector('#description'))
+            .catch(error => {
+                console.error(error);
+            });
+    </script>
 </x-app-layout>

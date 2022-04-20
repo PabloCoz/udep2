@@ -32,8 +32,6 @@
                                                             {{ $exam->name }}
                                                         </h1>
                                                     </div>
-                                                    <div class="text-sm text-gray-500">
-                                                        {{ Str::limit($exam->description, 30) }}</div>
                                                 </div>
                                             </div>
                                         </td>

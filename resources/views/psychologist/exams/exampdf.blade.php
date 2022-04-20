@@ -18,7 +18,7 @@
 
     <div class="my-6">
         <h1 class="text-lg text-justify">
-            {{$exam->description}}
+            {!! $exam->description !!}
         </h1>
     </div>
 

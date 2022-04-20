@@ -1,15 +1,15 @@
-@props(['exams'])
+@props(['batteries'])
 <table class="min-w-full divide-y divide-gray-200">
     <thead class="bg-gray-50">
         <tr>
             <th scope="col" class="px-6 py-3 text-center text-xs font-medium text-gray-500 uppercase tracking-wider">
-                Nombre de Exámen</th>
+                Nombre de Bateria</th>
             <th scope="col" class="px-6 py-3 text-center text-xs font-medium text-gray-500 uppercase tracking-wider">
                 Acciones</th>
         </tr>
     </thead>
     <tbody class="bg-white divide-y divide-gray-200">
-        @foreach ($exams as $exam)
+        @foreach ($batteries as $exam)
             <tr>
                 <td class="px-6 py-4 whitespace-nowrap">
                     <div class="flex items-center">
@@ -19,8 +19,6 @@
                                     {{ $exam->name }}
                                 </h1>
                             </div>
-                            <div class="text-sm text-gray-500">
-                                {{ Str::limit($exam->description, 30) }}</div>
                         </div>
                     </div>
                 </td>

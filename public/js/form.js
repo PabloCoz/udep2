@@ -15,3 +15,19 @@ function slug(str) {
         replace(/^-|-$/g, '');
     return $slug.toLowerCase();
 }
+
+
+/* ClassicEditor
+    .create(document.querySelector('#description'), {
+        toolbar: ['heading', '|', 'bold', 'italic', 'link', 'bulletedList', 'numberedList', 'blockQuote'],
+        heading: {
+            options: [
+                { model: 'paragraph', title: 'Parrafo', class: 'ck-heading_paragraph' },
+                { model: 'heading1', view: 'h1', title: 'Título', class: 'ck-heading_heading1' },
+                { model: 'heading2', view: 'h2', title: 'SubTítulo', class: 'ck-heading_heading2' }
+            ]
+        }
+    })
+    .catch(error => {
+        console.log(error);
+    }); */

@@ -11,6 +11,11 @@ class Exam extends Model
 
     protected $guarded = ['id'];
 
+    public function batteries()
+    {
+        return $this->belongsToMany(Battery::class);
+    }
+
     public function getRouteKeyName()
     {
         return 'slug';

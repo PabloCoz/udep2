@@ -9,6 +9,8 @@ use Livewire\WithPagination;
 class ExamIndex extends Component
 {
     use WithPagination;
+
+    public $exam = [];
     
     public function render()
     {

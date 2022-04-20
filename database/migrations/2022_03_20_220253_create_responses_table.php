@@ -23,6 +23,8 @@ return new class extends Migration
             $table->foreign('option_id')->references('id')->on('options');
             $table->unsignedBigInteger('user_id');
             $table->foreign('user_id')->references('id')->on('users');
+            $table->unsignedBigInteger('batery_id')->nullable();
+            $table->foreign('batery_id')->references('id')->on('batteries');
             $table->timestamps();
         });
     }

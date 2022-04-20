@@ -56,11 +56,7 @@ class PermissionSeeder extends Seeder
         ]);
 
         Permission::create([
-            'name' => 'Eliminar Examen' /* 11 */
-        ]);
-
-        Permission::create([
-            'name' => 'Ver Respuestas' /* 12 */
+            'name' => 'Ver Respuestas' /* 11 */
         ]);
     }
 }

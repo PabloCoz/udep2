@@ -12,6 +12,7 @@ class Users extends Component
 
     public $open = false;
 
+    
     public function render()
     {
         $allUser = User::all();
@@ -20,8 +21,12 @@ class Users extends Component
 
     public function save()
     {
-        $this->exam->students()->attach($this->students);
-        $this->reset('open', 'students');
-        return redirect()->route('battery');
+        foreach ($this->students as $student) {
+            if ($student > 0) {
+                $this->exam->students()->attach($student);
+            }
+        }
+        $this->reset('open', 'students', 'exam');
+        return redirect()->route('exams.index')->flash('success', 'El examen fue asignado correctamente');
     }
 }

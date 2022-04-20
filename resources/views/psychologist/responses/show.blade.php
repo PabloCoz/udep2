@@ -52,16 +52,17 @@
                                             </tr>
                                         @endforeach
                                     @else
-                                        <div class="">
-                                            Sin resultados
-                                        </div>
+                                        <tr class="">
+                                            <td>
+                                                <div class="text-sm text-gray-900 text-center">
+                                                    No hay alumnos registrados
+                                                </div>
+                                            </td>
+                                        </tr>
                                     @endif
                                 </tbody>
                             </table>
                         </div>
-                        {{-- <div class="mt-8">
-                            {{ $exams->links() }}
-                        </div> --}}
                     </div>
                 </div>
             </div>

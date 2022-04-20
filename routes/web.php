@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\Psychologist\BatteryController;
 use App\Http\Controllers\Psychologist\ExamController;
 use App\Http\Controllers\Psychologist\ResponseController;
 use App\Http\Livewire\Notification;
@@ -24,7 +25,7 @@ Route::get('/', function () {
     return view('auth.login');
 });
 
-Route::resource('exams', ExamController::class)->middleware('auth', 'can:Listar Examen')->names('exams');
+Route::resource('exams', ExamController::class)->except('destroy')->middleware('auth', 'can:Listar Examen')->names('exams');
 
 Route::get('{exam}/pdf', [ExamController::class, 'pdf'])->middleware('auth')->name('pdf');
 
@@ -38,6 +39,6 @@ Route::get('users', UserIndex::class)->middleware('auth', 'can:Listar Usuarios')
 
 Route::get('messages', Notification::class)->middleware('auth')->name('messages');
 
-Route::get('battery', Battery::class)->middleware('auth', 'can:Listar Examen')->name('battery');
+Route::get('battery', [BatteryController::class, 'index'])->middleware('auth', 'can:Listar Examen')->name('battery');
 
 Route::get('{user}/evaluation', Evaluation::class)->middleware('auth')->name('users.evaluation');

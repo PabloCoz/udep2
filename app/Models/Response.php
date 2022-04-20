@@ -30,4 +30,9 @@ class Response extends Model
     {
         return $this->belongsTo(User::class);
     }
+
+    public function battery()
+    {
+        return $this->hasOne(Battery::class);
+    }
 }

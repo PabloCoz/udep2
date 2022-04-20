@@ -19,7 +19,8 @@
 
 <div class="mt-2">
     {!! Form::label('description', 'Descripción', ['class' => 'uppercase text-sm text-gray-500']) !!}
-    {!! Form::text('description', null, ['class' => 'rounded w-full py-1']) !!}
+    {!! Form::textarea('description', null, ['class' => 'rounded w-full py-1']) !!}
+    
     @error('description')
         <span class="text-xs text-red-500">{{ $message }}</span>
     @enderror

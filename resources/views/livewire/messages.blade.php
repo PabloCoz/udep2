@@ -10,20 +10,20 @@
         </x-slot>
         <x-slot name="content">
             <div class="mb-4">
-                <x-jet-label>Asunto</x-jet-label>
-                <input type="text" class="w-full rounded border focus:border-black focus:ring-black" placeholder="Ingrese asunto" wire:model="subject" >
+                <x-jet-label class="font-bold text-left" for="subject" value="Asunto" />
+                <input type="text" class="block w-full rounded border focus:border-black focus:ring-black" placeholder="Ingrese asunto" wire:model="subject" >
                 <x-jet-input-error for="subject" />
             </div>
 
             <div class="mb-4">
-                <x-jet-label>Mensaje</x-jet-label>
-                <textarea class="w-full rounded border focus:border-black focus:ring-black" placeholder="Ingrese descripcion" wire:model="body"></textarea>
+                <x-jet-label class="font-bold text-left" value="Mensaje"/>
+                <textarea class="block w-full rounded border focus:border-black focus:ring-black" placeholder="Ingrese descripcion" wire:model="body"></textarea>
                 <x-jet-input-error for="body" />
             </div>
 
             <div class="mb-4">
-                <x-jet-label>Destino</x-jet-label>
-                <select wire:model="to_user_id" class="w-full rounded border focus:border-black focus:ring-black">
+                <x-jet-label class="font-bold text-left" value="Destino"/>
+                <select wire:model="to_user_id" class="block w-full rounded border focus:border-black focus:ring-black">
                     <option value="0" selected disabled>Seleccione un usuario</option>
                     @foreach ($users as $user)
                         <option value="{{ $user->id }}">{{ $user->name }}</option>

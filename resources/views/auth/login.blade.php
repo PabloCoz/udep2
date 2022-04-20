@@ -1,7 +1,9 @@
 <x-guest-layout>
     <x-jet-authentication-card>
         <x-slot name="logo">
-            <img class="object-contain h-52" src="{{ asset('img/logo.png') }}" alt="">
+            <img class="object-contain h-52 object-center" src="{{ asset('img/logo.png') }}" alt="">
+            <h1 style="font-family: 'Cinzel', serif;" class="text-center font-semibold text-cyan-800 text-xl">Sistema de
+                evaluación psicológica</h1>
         </x-slot>
 
         <x-jet-validation-errors class="mb-4" />

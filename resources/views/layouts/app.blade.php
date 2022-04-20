@@ -36,6 +36,7 @@
     @livewireScripts
     <script src="{{ mix('js/app.js') }}"></script>
     @stack('modals')
+    
     @isset($js)
         {{ $js }}
     @endisset
