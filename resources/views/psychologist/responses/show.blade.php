@@ -23,15 +23,15 @@
                                     </tr>
                                 </thead>
                                 <tbody class="bg-white divide-y divide-gray-200">
-                                    @if (count($exam->students))
-                                        @foreach ($exam->students as $item)
+                                    @if (count($exam->responses))
+                                        @foreach ($exam->responses as $item)
                                             <tr>
                                                 <td class="px-6 py-4 whitespace-nowrap">
                                                     <div class="flex items-center">
                                                         <div class="ml-4">
                                                             <div class="text-sm font-medium text-gray-900">
                                                                 <h1>
-                                                                    {{ $item->name }}
+                                                                    {{ $item->user->name }}
                                                                 </h1>
                                                             </div>
                                                         </div>
@@ -44,9 +44,9 @@
                                                 </td>
                                                 <td class="px-6 py-4 whitespace-nowrap">
                                                     <div class="text-sm text-gray-900 text-center">
-                                                        <a href=" {{ route('users.evaluation', $item) }}"
+                                                        {{-- <a href=" {{ route('users.evaluation', $item) }}"
                                                             class="text-red-500 hover:font-bold hover:underline">Calificar
-                                                        </a>
+                                                        </a> --}}
                                                     </div>
                                                 </td>
                                             </tr>

@@ -11,6 +11,7 @@ use Livewire\Component;
 class ExamResponse extends Component
 {
     use AuthorizesRequests;
+
     public $exam;
 
     public $selected;
@@ -39,6 +40,7 @@ class ExamResponse extends Component
             ]);
         }
         $this->reset('selected');
-        return redirect()-route('students.exam');
+        $this->exam->students()->detach(auth()->user()->id);
+        return redirect()->to('students/exams');
     }
 }

@@ -78,6 +78,11 @@ class User extends Authenticatable
 
     public function response()
     {
-        return $this->hasMany(Response::class);
+        return $this->hasOne(Response::class);
+    }
+
+    public function batteries()
+    {
+        return $this->belongsToMany(Battery::class);
     }
 }

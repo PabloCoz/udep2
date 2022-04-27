@@ -6,21 +6,14 @@ use Livewire\Component;
 
 class Notification extends Component
 {
-    public $notification;
+    public $messages;
 
-    /* public function mount()
+    public function mount()
     {
-        $this->notification();
+        $this->messages = auth()->user()->notifications;
     }
-
-    public function notification()
-    {
-        $this->notifications = auth()->user()->notifications;
-    } */
-
     public function render()
     {
-        $messages = auth()->user()->notifications;
-        return view('livewire.notification', compact('messages'));
+        return view('livewire.notification');
     }
 }

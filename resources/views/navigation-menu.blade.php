@@ -61,14 +61,15 @@
                 class="block py-2.5 px-4 rounded transition duration-200 @routeIs ('students.exam') bg-white text-black font-bold @endif hover:bg-white hover:font-bold hover:text-black ">
                 Examenes
             </a>
-            <a href="{{ route('messages') }}"
+            {{-- <a href="{{ route('messages') }}"
                 class="flex items-center py-2.5 px-4 rounded transition duration-200 @routeIs ('messages') bg-white text-black font-bold @endif hover:bg-white hover:font-bold hover:text-black justify-between">
                 <span class="">Mensajes</span>
                 <span
-                    class="inline-flex justify-center items-center p-3 ml-3 w-3 h-3 text-sm font-bold text-white bg-red-500 rounded-full">3</span>
-            </a>
+                    class="inline-flex justify-center items-center p-3 ml-3 w-3 h-3 text-sm font-bold text-white bg-red-500 rounded-full">{{ auth()->user()->notification }}</span>
+            </a> --}}
+            @livewire('notification-component')
             <a href="{{ route('profile.show') }}"
-            class="block py-2.5 px-4 rounded transition duration-200 @routeIs ('profile.show') bg-white text-black font-bold @endif hover:bg-white hover:font-bold hover:text-black ">
+                class="block py-2.5 px-4 rounded transition duration-200 @routeIs ('profile.show') bg-white text-black font-bold @endif hover:bg-white hover:font-bold hover:text-black ">
                 Configuraciones
             </a>
             <form method="POST" action="{{ route('logout') }}">

@@ -51,7 +51,7 @@
                         </td>
                         <td class="px-6 py-4 whitespace-nowrap">
                             <div class="text-sm text-gray-900 text-center">
-                                <a href="" class="text-blue-500 hover:font-bold hover:underline">{{ __('Edit') }}</a>
+                                @livewire('psychologist.battery-users' , ['battery' => $battery])
                             </div>
                         </td>
                     </tr>

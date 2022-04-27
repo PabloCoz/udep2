@@ -20,4 +20,9 @@ class Battery extends Model
     {
         return $this->belongsTo(Response::class);
     }
+
+    public function users()
+    {
+        return $this->belongsToMany(User::class);
+    }
 }

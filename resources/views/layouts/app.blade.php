@@ -36,7 +36,14 @@
     @livewireScripts
     <script src="{{ mix('js/app.js') }}"></script>
     @stack('modals')
-    
+    @auth
+        <script>
+            Echo.private('App.Models.User.' + {{ Auth::user()->id }})
+                .notification((notification) => {
+                    Livewire.emit('notification');
+                });
+        </script>
+    @endauth
     @isset($js)
         {{ $js }}
     @endisset

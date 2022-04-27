@@ -9,7 +9,6 @@
         <div class="">
             @livewire('psychologist.exam-table', ['batteries' => $batteries])
         </div>
-        {{-- <x-battery-component  :batteries="$batteries"/> --}}
     </div>
     
 </x-app-layout>

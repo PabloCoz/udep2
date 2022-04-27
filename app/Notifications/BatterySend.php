@@ -2,14 +2,13 @@
 
 namespace App\Notifications;
 
-use App\Models\User;
 use Illuminate\Bus\Queueable;
 use Illuminate\Contracts\Queue\ShouldQueue;
 use Illuminate\Notifications\Messages\BroadcastMessage;
 use Illuminate\Notifications\Messages\MailMessage;
 use Illuminate\Notifications\Notification;
 
-class MessageSent extends Notification
+class BatterySend extends Notification
 {
     use Queueable;
 
@@ -18,7 +17,7 @@ class MessageSent extends Notification
      *
      * @return void
      */
-    public function __construct(public $message)
+    public function __construct(public $battery)
     {
         //
     }
@@ -31,7 +30,7 @@ class MessageSent extends Notification
      */
     public function via($notifiable)
     {
-        return ['database'];
+        return ['database', 'broadcast'];
     }
 
     /**
@@ -59,9 +58,9 @@ class MessageSent extends Notification
         $notifiable->notification += 1;
         $notifiable->save();
         return [
-            'to_user' => User::find($this->message->from_user_id)->name,
-            'message' => $this->message->body,
-            'url' => ''
+            'to_user' => 'Departamento de Psicología',
+            'message' => 'Se envio la prueba de '. $this->battery->name . ', por favor responda la prueba con total sinceridad.',
+            'url' => route('students.exam'),
         ];
     }
 
